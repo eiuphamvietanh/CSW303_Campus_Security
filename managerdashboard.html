@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manager Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    .dashboard-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1e293b;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 15px;
+      display: block;
+      padding: 8px 10px;
+      border-radius: 5px;
+    }
+
+    .sidebar a:hover {
+      background-color: #334155;
+    }
+
+    .dashboard {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .topbar {
+      background-color: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .job-table {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .job-table th, .job-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .job-table th {
+      background-color: #f8fafc;
+    }
+
+    .job-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    .edit { background-color: #3b82f6; color: white; }
+    .update { background-color: #10b981; color: white; }
+    .delete { background-color: #ef4444; color: white; }
+    .assign { background-color: #f59e0b; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Manager</h2>
+      <a href="#">Dashboard</a>
+      <a href="#">Employees</a>
+      <a href="#">Reports</a>
+      <a href="#">Settings</a>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard">
+      <div class="topbar">Job Management</div>
+
+      <div class="search-bar">
+        <input type="text" id="employeeSearch" placeholder="Search by employee name...">
+      </div>
+
+      <div class="job-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Job ID</th>
+              <th>Job Title</th>
+              <th>Employee</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>J101</td>
+              <td>Campus Patrol</td>
+              <td>John Doe</td>
+              <td>2025-05-21</td>
+              <td>Assigned</td>
+              <td>
+                <button class="action-btn assign">Assign</button>
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn update">Update</button>
+                <button class="action-btn delete">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>J102</td>
+              <td>Library Watch</td>
+              <td>Jane Smith</td>
+              <td>2025-05-22</td>
+              <td>In Progress</td>
+              <td>
+                <button class="action-btn assign">Assign</button>
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn update">Update</button>
+                <button class="action-btn delete">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>J103</td>
+              <td>Gate Duty</td>
+              <td>Emily Johnson</td>
+              <td>2025-05-23</td>
+              <td>Completed</td>
+              <td>
+                <button class="action-btn assign">Assign</button>
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn update">Update</button>
+                <button class="action-btn delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+   
+    document.getElementById("employeeSearch").addEventListener("input", function() {
+      const filter = this.value.toLowerCase();
+      const rows = document.querySelectorAll(".job-table tbody tr");
+
+      rows.forEach(row => {
+        const employee = row.cells[2].textContent.toLowerCase();
+        if (employee.includes(filter)) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
