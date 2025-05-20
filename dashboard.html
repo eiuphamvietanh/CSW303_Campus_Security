@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7-Day Job Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: white;
+      padding: 30px 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sidebar li:hover {
+      background-color: #e0e0e0;
+    }
+
+    .dashboard {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .dashboard h1 {
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 15px;
+    }
+
+    .day-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .day-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .job-task {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .job-task::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #007bff;
+    }
+
+    .stats-bar {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat-card {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-title {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Campus Staff</h2>
+    <ul>
+      <li>Dashboard</li>
+      <li>Assignments</li>
+      <li>Reports</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <div class="dashboard">
+    <h1>Upcoming 7-Day Jobs</h1>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-title">Total Jobs</div>
+        <div class="stat-value">14</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Active Staff</div>
+        <div class="stat-value">6</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Completed Today</div>
+        <div class="stat-value">3</div>
+      </div>
+    </div>
+
+    <div class="week-grid" style="margin-top: 30px;">
+      <div class="day-card">
+        <div class="day-title">Mon</div>
+        <div class="job-task">Gate Patrol - 8:00 AM</div>
+        <div class="job-task">Library Round - 4:00 PM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Tue</div>
+        <div class="job-task">Parking Lot Watch - 7:00 AM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Wed</div>
+        <div class="job-task">Cafeteria Supervision - 12:00 PM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Thu</div>
+        <div class="job-task">Main Gate - 10:00 AM</div>
+        <div class="job-task">Dorm Patrol - 9:00 PM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Fri</div>
+        <div class="job-task">Lab Hall Watch - 11:00 AM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Sat</div>
+        <div class="job-task">Gym Night Watch - 8:00 PM</div>
+      </div>
+      <div class="day-card">
+        <div class="day-title">Sun</div>
+        <div class="job-task">No jobs scheduled</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
