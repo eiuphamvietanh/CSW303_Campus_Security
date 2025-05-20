@@ -1,0 +1,126 @@
+<html>
+<head>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .form-container {
+            margin-top: 50px;
+        }
+
+        .form-header {
+            text-align: center;
+        }
+
+        .mid-form {
+            display: block;
+            box-sizing: border-box;
+            border: 4px solid rgb(169, 84, 0);
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 10px 10px 10px rgb(169, 84, 0);
+            width: 400px;
+            height: 500px;
+            background-color: rgb(240, 233, 228);
+            padding-top: 30px;
+        }
+
+        .form-group {
+            padding: 10px 25px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="password"] {
+            height: 40px;
+            width: 90%;
+            box-sizing: border-box;
+            border: 1px solid black;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .gender-container {
+            display: flex;
+            gap: 10px;
+            padding: 0 25px;
+            justify-content: center;
+        }
+
+        .gender-option {
+            display: flex;
+            margin-left: -4px;
+            margin-right: auto;
+            align-items: center;
+            width: 110px;
+            padding: 8px 12px;
+            border: 1px solid rgb(169, 84, 0); /* Match mid-form border */
+            border-radius: 15px;
+            background-color: #fff;
+            cursor: pointer;
+            justify-content: center;
+        }
+
+        .gender-option input[type="radio"] {
+            vertical-align: middle;
+        }
+
+        .submit-btn {
+            text-align: center;
+            padding: 10px 25px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(169, 84, 0);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<header></header>
+<body>
+    <section>
+        <div class="form-container">
+            <div class="mid-form">
+                <div class="form-header">
+                    <h1>Register Form</h1>
+                </div>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <input type="text" placeholder="First name">
+                        <input type="text" placeholder="Last name">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="datetime" id="datetime">
+                    </div>
+                    <div class="gender-container">
+                        <label class="gender-option">
+                            <input type="radio" name="gender" value="female"> Female
+                        </label>
+                        <label class="gender-option">
+                            <input type="radio" name="gender" value="male" checked> Male
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Number phone or email address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="password" placeholder="Password">
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit" value="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+<footer></footer>
+</html>
